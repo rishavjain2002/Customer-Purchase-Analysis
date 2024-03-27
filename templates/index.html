@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Machine Learning Service</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-image: url('ml_background.jpg'); /* Replace 'your-background-image.jpg' with the actual image file path */
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent background for a modern look */
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      padding: 30px;
+      width: 400px;
+      max-width: 100%;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    h2 {
+      color: #333;
+      margin-bottom: 20px;
+      font-family: 'Pacifico', cursive; /* Beautiful cursive font for the heading */
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    label {
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #555;
+    }
+
+    input {
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: #fff;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      width: 100%;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .note {
+      margin-top: 15px;
+      color: #777;
+      font-size: 12px;
+    }
+  </style>
+
+  <!-- Include a beautiful cursive font for the heading -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h2>Machine Learning Service</h2>
+    {% if label %}
+      {% if label == 1%}
+        <h3 style ="color:green">Will purchase</h3>
+      {% else %}
+        <h3 style ="color:red">Will not purchase</h3>
+      {% endif %}
+    {% endif %}
+    <form class ="form" action="/predict" method="POST">
+      <label>Enter Age:</label>
+      <input type="number" name="age" class="form-control"><br>
+      <label>Enter Salary :</label>
+      <input type="number" name="salary" class="form-control"><br><br>
+      <input type="submit" value="Predict" class="btn btn-block bg-nav btn-lg text-primary">
+    </form>
+  </div>
+
+  <script>
+    function submitForm() {
+      // You can add additional logic here to handle form submission, e.g., sending data to a server.
+      alert('Form submitted!'); // Replace this with your actual submission code.
+    }
+  </script>
+</body>
+</html>
